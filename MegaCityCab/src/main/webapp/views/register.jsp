@@ -1,29 +1,37 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
-    <title>Register</title>
-<link rel="stylesheet" href="../css/styles.css">
-
+    <title>User Registration</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <form action="/MegaCityCab/registerServlet" method="post">
-        <h2>Register</h2>
-        <label>Username:</label>
-        <input type="text" name="username" required>
-        
-        <label>Password:</label>
-        <input type="password" name="password" required>
-        
-        <label>Email:</label>
-        <input type="email" name="email" required>
-        
-        <label>Phone:</label>
-        <input type="text" name="phone" required>
-        
+    <h2>User Registration</h2>
+
+    <form action="/MegaCityCab/RegisterServlet" method="post">
+        <label for="username">Username:</label>
+        <input type="text" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone" required><br><br>
+
+        <label for="name">Full Name:</label>
+        <input type="text" name="name" required><br><br>
+
+        <label for="address">Address:</label>
+        <textarea name="address" required></textarea><br><br>
+
+        <label for="nic">NIC Number:</label>
+        <input type="text" name="nic" required><br><br>
+
         <button type="submit">Register</button>
-        
     </form>
-    <a href="login.jsp">Already have an account? Login here</a>
+
+    <p>Already have an account? <a href="login.jsp">Login here</a></p>
 </body>
 </html>
