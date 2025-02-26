@@ -38,14 +38,15 @@
   </servlet-mapping>
 
 <!-- BookingServlet Mapping -->
-  <servlet>
+<servlet>
     <servlet-name>BookingServlet</servlet-name>
     <servlet-class>controller.BookingServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
+</servlet>
+<servlet-mapping>
     <servlet-name>BookingServlet</servlet-name>
     <url-pattern>/BookingServlet</url-pattern>
-  </servlet-mapping>
+</servlet-mapping>
+
 
   <!-- CustomerRegisterServlet Mapping -->
   <servlet>

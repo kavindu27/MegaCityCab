@@ -21,6 +21,9 @@ public class Booking {
         this.status = status;
         this.bookingTime = bookingTime;
     }
+    
+    public Booking() {
+    }
 
     // Getter methods
     public int getBookingId() {

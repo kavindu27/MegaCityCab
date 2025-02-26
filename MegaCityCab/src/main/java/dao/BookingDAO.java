@@ -8,37 +8,28 @@ import model.Booking; // Assuming you have a Booking class to hold booking data
 
 public class BookingDAO {
 
-    public boolean bookRide(int customerId, String pickup, String destination, double fare) {
-        Connection conn = null;
-        CallableStatement stmt = null;
+	public boolean bookRide(int userId, String pickup, String destination, double fare) {
+	    // Updated query to insert into bookings with the user_id field
+	    String query = "INSERT INTO bookings (user_id, pickup_location, destination, fare) VALUES (?, ?, ?, ?)";
 
-        try {
-            conn = DBConnection.getConnection();
+	    try (Connection conn = DBConnection.getConnection();
+	         PreparedStatement stmt = conn.prepareStatement(query)) {
 
-            // Call the stored procedure to book a ride
-            String sql = "{CALL BookRide(?, ?, ?, ?)}";
-            stmt = conn.prepareCall(sql);
-            stmt.setInt(1, customerId);
-            stmt.setString(2, pickup);
-            stmt.setString(3, destination);
-            stmt.setDouble(4, fare);
+	        // Set the user_id (which was previously customerId)
+	        stmt.setInt(1, userId);
+	        stmt.setString(2, pickup);
+	        stmt.setString(3, destination);
+	        stmt.setDouble(4, fare);
 
-            // Execute the stored procedure
-            stmt.executeUpdate();
-            return true;
+	        int rowsAffected = stmt.executeUpdate();
+	        return rowsAffected > 0;
+	    } catch (SQLException e) {
+	        e.printStackTrace();  // Print the stack trace to check for specific errors
+	        return false;
+	    }
+	}
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        } finally {
-            try {
-                if (stmt != null) stmt.close();
-                if (conn != null) conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+    
 
     // Method to create a booking
     public boolean createBooking(int customerId, String pickup, String destination, double fare) {
@@ -90,30 +81,31 @@ public class BookingDAO {
         return false;  // Return false if the update failed
     }
 
-    // Method to get all bookings
     public List<Booking> getAllBookings() {
         List<Booking> bookings = new ArrayList<>();
-        try (Connection conn = DBConnection.getConnection()) {
-            String sql = "SELECT * FROM bookings";
-            PreparedStatement stmt = conn.prepareStatement(sql);
-            ResultSet rs = stmt.executeQuery();
+        String query = "SELECT b.booking_id, b.pickup_location, b.destination, b.fare, b.status, u.username " +
+                       "FROM bookings b " +
+                       "JOIN users u ON b.user_id = u.user_id";
 
-            // Iterate through the result set and create Booking objects
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query);
+             ResultSet rs = stmt.executeQuery()) {
+
             while (rs.next()) {
-            	Booking booking = new Booking(
-            		    rs.getInt("booking_id"),
-            		    rs.getString("customer_name"),
-            		    rs.getString("pickup_location"),
-            		    rs.getString("destination"),
-            		    rs.getDouble("fare"),
-            		    rs.getString("status"),
-            		    rs.getTimestamp("booking_time")
-            		);
-
+                Booking booking = new Booking();
+                booking.setBookingId(rs.getInt("booking_id"));
+                booking.setPickupLocation(rs.getString("pickup_location"));
+                booking.setDestination(rs.getString("destination"));
+                booking.setFare(rs.getDouble("fare"));
+                booking.setStatus(rs.getString("status"));
+                booking.setCustomerName(rs.getString("username"));  // Assuming you have customer name in users table
+                bookings.add(booking);
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return bookings;  // Return the list of bookings
+
+        return bookings;
     }
-}
+    }
