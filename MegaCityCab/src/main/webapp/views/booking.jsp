@@ -12,26 +12,44 @@
             var destination = document.getElementById("destination").value;
 
             if (pickup && destination) {
-                // Call the backend to calculate the fare based on the pickup and destination locations
+                // Send the pickup and destination locations to the backend
                 $.ajax({
                     url: '/MegaCityCab/CalculateFareServlet',
                     method: 'GET',
                     data: { pickup: pickup, destination: destination },
                     success: function(response) {
-                        // On success, update the fare field
-                        document.getElementById("fare").value = response.fare.toFixed(2);
+                        // Log the response to ensure the fare is correctly received
+                        console.log("Response from server:", response);
+
+                        if(response && response.fare) {
+                            // Update the fare input field
+                            document.getElementById("fare").value = response.fare.toFixed(2);
+                        } else {
+                            alert('Fare calculation failed. Please try again.');
+                        }
                     },
-                    error: function() {
-                        alert('Error calculating fare');
+                    error: function(xhr, status, error) {
+                        console.log("Error:", error);
+                        alert('Error calculating fare: ' + error);
                     }
                 });
             }
+        }
+
+        // Prevent form submission if the fare is not calculated
+        function validateForm() {
+            var fare = document.getElementById("fare").value;
+            if (!fare || fare === "") {
+                alert("Please calculate the fare before booking.");
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
         }
     </script>
 </head>
 <body>
     <h2>Book a Ride</h2>
-    <form action="/MegaCityCab/BookingServlet" method="post">
+    <form action="/MegaCityCab/BookingServlet" method="post" onsubmit="return validateForm()">
         <label for="pickup">Pickup Location:</label>
         <select id="pickup" name="pickup" onchange="calculateFare()" required>
             <%
