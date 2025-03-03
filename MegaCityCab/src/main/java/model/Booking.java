@@ -21,7 +21,8 @@ public class Booking {
         this.status = status;
         this.bookingTime = bookingTime;
     }
-    
+
+    // Default constructor
     public Booking() {
     }
 
@@ -54,7 +55,7 @@ public class Booking {
         return bookingTime;
     }
 
-    // Setter methods (if needed)
+    // Setter methods
     public void setBookingId(int bookingId) {
         this.bookingId = bookingId;
     }

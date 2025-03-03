@@ -11,13 +11,16 @@ import model.User;
 import java.io.IOException;
 import dao.BookingDAO;
 import dao.LocationDAO;
+import generator.BillGenerator;  // Import BillGenerator class
+import model.Bill;
 
 @WebServlet("/BookingServlet")
 public class BookingServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
+    // POST method to handle the booking and bill generation
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Retrieve form parameters
+        // Retrieve form parameters (pickup and destination locations)
         String pickup = request.getParameter("pickup");
         String destination = request.getParameter("destination");
 
@@ -31,7 +34,7 @@ public class BookingServlet extends HttpServlet {
 
         // Get the user object from session
         User user = (User) session.getAttribute("user");
-        int customerId = user.getUserId(); // Assuming `User` has a method `getUserId()`
+        int userId = user.getUserId(); // Assuming `User` has a method `getUserId()`
 
         // Get coordinates for pickup and destination
         LocationDAO locationDAO = new LocationDAO();
@@ -42,21 +45,34 @@ public class BookingServlet extends HttpServlet {
         double distance = calculateDistance(pickupCoordinates[0], pickupCoordinates[1], 
                                             destinationCoordinates[0], destinationCoordinates[1]);
 
-        // Calculate fare (120 Rs per km)
+        // Calculate fare (assuming 120 Rs per km)
         double fare = distance * 120;
 
-        // Call BookingDAO to book the ride
+        // Call BookingDAO to book the ride and get the booking_id
         BookingDAO bookingDAO = new BookingDAO();
-        boolean isBooked = bookingDAO.bookRide(customerId, pickup, destination, fare);
+        int bookingId = bookingDAO.bookRide(userId, pickup, destination, fare);  // Now returns booking_id, not boolean
 
-        // Redirect based on success or failure
-        if (isBooked) {
-            response.sendRedirect("views/booking_confirmation.jsp?msg=Booking%20Successful");
+        // If the booking is successful, generate the bill
+        if (bookingId != -1) {
+            // Generate the bill with bookingId and fare
+            BillGenerator billGenerator = new BillGenerator();
+            Bill generatedBill = billGenerator.generateBill(bookingId, fare); // Pass bookingId to BillGenerator
+
+            if (generatedBill != null) {
+                // Set the generated bill as a request attribute and forward to booking confirmation page
+                request.setAttribute("bill", generatedBill);
+                request.getRequestDispatcher("views/booking_confirmation.jsp").forward(request, response);
+            } else {
+                // If bill generation failed, redirect to an error page
+                response.sendRedirect("views/error.jsp?msg=Failed%20to%20generate%20bill");
+            }
         } else {
+            // Redirect to error page if booking failed
             response.sendRedirect("views/error.jsp?msg=Booking%20Failed");
         }
     }
 
+    // Method to calculate the distance between pickup and destination using Haversine formula
     private double calculateDistance(double lon1, double lat1, double lon2, double lat2) {
         final int R = 6371; // Radius of the Earth in kilometers
 

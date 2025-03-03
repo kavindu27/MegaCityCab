@@ -32,7 +32,7 @@
     <div>
         <h3>Your Past Bookings</h3>
         <p>View your previous ride bookings.</p>
-        <a href="viewbookings.jsp">Go to Your Bookings</a>
+        <a href="ViewMyBookings.jsp">Go to Your Bookings</a>
     </div>
 
     <div>

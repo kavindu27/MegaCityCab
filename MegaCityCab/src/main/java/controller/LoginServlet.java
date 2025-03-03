@@ -23,13 +23,18 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
+        // Authenticate the user
         UserDAO dao = new UserDAO();
         User user = dao.validateUser(username, password);
 
         if (user != null) {
             // Set the user in session
             HttpSession session = request.getSession();
-            session.setAttribute("user", user);
+            session.setAttribute("user", user); // Store user in session
+
+            // Debugging output to confirm session creation and user
+            System.out.println("Session ID: " + session.getId());
+            System.out.println("User " + user.getUsername() + " logged in successfully.");
 
             // Redirect based on role
             String role = user.getRole();
@@ -38,10 +43,12 @@ public class LoginServlet extends HttpServlet {
             } else if ("manager".equals(role)) {
                 response.sendRedirect("/MegaCityCab/views/managerdashboard.jsp");
             } else {
-                response.sendRedirect("/MegaCityCab/views/homedashboard.jsp");  // Default to user dashboard
+                response.sendRedirect("/MegaCityCab/views/homedashboard.jsp");
             }
         } else {
+            // Invalid credentials, redirect to login page with error message
             response.sendRedirect("login.jsp?error=Invalid Credentials");
         }
     }
-}  
+}
+

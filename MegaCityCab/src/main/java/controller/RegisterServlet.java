@@ -13,6 +13,8 @@ import dao.UserDAO;
  */
 @WebServlet("/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             // Retrieve form parameters
