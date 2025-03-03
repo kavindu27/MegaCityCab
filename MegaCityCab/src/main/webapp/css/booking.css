@@ -1,0 +1,101 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #292929; /* Dark background */
+    color: #ffffff; /* White text */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Form Container */
+form {
+    background-color: #20515d; /* Dark teal background for form */
+    padding: 40px 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px; /* Limit form width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styles */
+h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+/* Label Styles */
+label {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #ffffff;
+    display: block;
+    text-align: left;
+}
+
+/* Styling the Select Dropdowns */
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #8d8d8d; /* Light grey background for selects */
+    color: #ffffff;
+    border: 1px solid #20515d;
+    border-radius: 5px;
+}
+
+select:focus {
+    border-color: #2f7585; /* Focused select border color */
+}
+
+/* Styling the Input Fields */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #8d8d8d; /* Light grey background for inputs */
+    color: #ffffff;
+    border: 1px solid #20515d;
+    border-radius: 5px;
+}
+
+input[type="text"]:focus {
+    border-color: #2f7585; /* Focused input border color */
+}
+
+/* Button Styling */
+button {
+    background-color: #20515d; /* Button background color */
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #2f7585; /* Button hover color */
+}
+
+/* Styling the Link at the Bottom */
+p {
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* Error message alert */
+.alert {
+    color: red;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Optional: You can add additional styles to enhance UX */

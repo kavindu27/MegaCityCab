@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
     <form action="/MegaCityCab/Loginservlet" method="post">
@@ -18,7 +18,8 @@
         <% if (request.getParameter("error") != null) { %>
             <p style="color:red;">${param.error}</p>
         <% } %>
+        <a href="register.jsp">Don't have an account? Register here</a>
     </form>
-    <a href="register.jsp">Don't have an account? Register here</a>
+    
 </body>
 </html>

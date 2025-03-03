@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Booking Confirmation</title>
+    <link rel="stylesheet" href="../css/BookingConfirmation.css">
 </head>
 <body>
     <h2>Booking Confirmation</h2>

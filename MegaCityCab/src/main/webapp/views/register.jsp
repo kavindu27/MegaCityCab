@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>User Registration</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/register.css">
 </head>
 <body>
     <h2>User Registration</h2>

@@ -8,7 +8,7 @@
 <html>
 <head>
     <title>View Bookings</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/ViewBookings.css">
 </head>
 <body>
     <h2>Customer Bookings</h2>

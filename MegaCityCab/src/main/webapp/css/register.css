@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #292929; /* Dark background */
+    color: #000000; /* White text */
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    background: #ffffff; /* White background for form */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px gray;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #8d8d8d; /* Light gray border */
+    border-radius: 5px;
+    background-color: #f4f4f4; /* Light gray background for inputs */
+}
+
+button {
+    background: #20515d; /* Teal background */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2f7585; /* Lighter teal on hover */
+}
+
+/* Style for the paragraph containing the link */
+p {
+    font-size: 12px;
+    color: #ffffff; /* White text for the paragraph */
+    text-align: center; /* Center align the text */
+}
+
+/* Style for the link */
+a {
+    color: #20515d; /* Teal color for the link */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the link text bold */
+}
+
+/* Add hover effect to the link */
+a:hover {
+    color: #2f7585; /* Lighter teal when hovering */
+    text-decoration: underline; /* Underline the link on hover */
+}
