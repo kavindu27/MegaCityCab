@@ -19,7 +19,7 @@
         <p>Bill Time: <%= bill.getBillTime() %></p>
 
         <!-- Button to download the bill as PDF -->
-        <a href="DownloadBillServlet?bookingId=<%= bill.getBookingId() %>">
+        <a href="generated_pdfs/bill_<%= bill.getBillId() %>.pdf" download>
             <button>Download Bill as PDF</button>
         </a>
     <% 

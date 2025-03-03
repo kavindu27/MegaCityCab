@@ -54,8 +54,13 @@ public class BookingServlet extends HttpServlet {
 
         // If the booking is successful, generate the bill
         if (bookingId != -1) {
+            // Get the real path for saving the PDF files (this could be a static folder path or passed from configuration)
+            String pdfDir = getServletContext().getRealPath("/") + "generated_pdfs";  // Absolute path to 'generated_pdfs' folder
+
+            // Instantiate BillGenerator with the path for saving PDFs
+            BillGenerator billGenerator = new BillGenerator(pdfDir);
+
             // Generate the bill with bookingId and fare
-            BillGenerator billGenerator = new BillGenerator();
             Bill generatedBill = billGenerator.generateBill(bookingId, fare); // Pass bookingId to BillGenerator
 
             if (generatedBill != null) {
