@@ -48,15 +48,29 @@
 </servlet-mapping>
 
 
-  <!-- CustomerRegisterServlet Mapping -->
+ <!-- AddCarServlet Mapping -->
   <servlet>
-    <servlet-name>CustomerRegisterServlet</servlet-name>
-    <servlet-class>controller.CustomerRegisterServlet</servlet-class>
+    <servlet-name>AddCarServlet</servlet-name>
+    <servlet-class>controller.AddCarServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>CustomerRegisterServlet</servlet-name>
-    <url-pattern>/CustomerRegisterServlet</url-pattern>
+    <servlet-name>AddCarServlet</servlet-name>
+    <url-pattern>/AddCarServlet</url-pattern>
   </servlet-mapping>
+
+
+
+  <!-- AddDriverServlet Mapping -->
+  <servlet>
+    <servlet-name>AddDriverServlet</servlet-name>
+    <servlet-class>controller.AddDriverServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddDriverServlet</servlet-name>
+    <url-pattern>/AddDriverServlet</url-pattern>
+  </servlet-mapping>
+
+
 
  <session-config>
     <session-timeout>20</session-timeout> <!-- Time in minutes -->

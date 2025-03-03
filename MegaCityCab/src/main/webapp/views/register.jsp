@@ -5,9 +5,10 @@
     <link rel="stylesheet" href="../css/register.css">
 </head>
 <body>
-    <h2>User Registration</h2>
+    
 
     <form action="/MegaCityCab/RegisterServlet" method="post">
+        <h2>User Registration</h2>
         <label for="username">Username:</label>
         <input type="text" name="username" required><br><br>
 

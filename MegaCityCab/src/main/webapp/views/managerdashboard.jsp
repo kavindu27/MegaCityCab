@@ -21,9 +21,17 @@
             </div>
 
             <div class="section">
-                <h3>Manage Staff</h3>
-                <p>Manage your staff's schedules and performance.</p>
-                <a href="manageStaff.jsp" class="button">Go to Staff Management</a>
+                <h3>Manage Cars</h3>
+                <p>Here you can add new cars and view existing ones.</p>
+                <a href="add_car.jsp" class="button">Add New Car</a>
+                <a href="view_cars.jsp" class="button">View Cars</a>
+            </div>
+
+            <div class="section">
+                <h3>Manage Drivers</h3>
+                <p>Here you can add new drivers and view existing ones.</p>
+                <a href="add_driver.jsp" class="button">Add New Driver</a>
+                <a href="view_drivers.jsp" class="button">View Drivers</a>
             </div>
 
             <!-- Logout Button -->
