@@ -66,7 +66,7 @@ public class BookingServlet extends HttpServlet {
             if (generatedBill != null) {
                 // Set the generated bill as a request attribute and forward to booking confirmation page
                 request.setAttribute("bill", generatedBill);
-                request.getRequestDispatcher("views/booking_confirmation.jsp").forward(request, response);
+                request.getRequestDispatcher("/views/booking_confirmation.jsp").forward(request, response);
             } else {
                 // If bill generation failed, redirect to an error page
                 response.sendRedirect("views/error.jsp?msg=Failed%20to%20generate%20bill");
