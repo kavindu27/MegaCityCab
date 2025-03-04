@@ -3,15 +3,19 @@
 <%@ page import="java.util.List" %>
 <%@ page import="model.Booking" %>
 
-
-
 <html>
 <head>
     <title>View Bookings</title>
     <link rel="stylesheet" href="../css/ViewBookings.css">
 </head>
 <body>
+
     <h2>Customer Bookings</h2>
+    
+    <!-- Back Button Container (Positioned in the upper-right corner) -->
+    <div class="back-button-container">
+        <button type="button" onclick="window.location.href='managerdashboard.jsp'">Back</button>
+    </div>
 
     <%
         // Retrieve all bookings
@@ -25,7 +29,7 @@
     <%
         } else {
     %>
-    <table border="1">
+    <table>
         <thead>
             <tr>
                 <th>Booking ID</th>
@@ -59,5 +63,6 @@
         </tbody>
     </table>
     <% } %>
+
 </body>
 </html>

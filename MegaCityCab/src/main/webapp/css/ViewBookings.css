@@ -74,3 +74,36 @@ p {
 table, p {
     margin-bottom: 30px;
 }
+
+/* Back Button Styling in Upper Right Corner */
+.back-button-container {
+    position: fixed; /* Keep it fixed in the corner */
+    top: 20px;
+    right: 20px;
+}
+
+button[type="button"] {
+    background-color: #20515d;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+button[type="button"]:hover {
+    background-color: #2f7585;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    table, th, td {
+        font-size: 14px;
+    }
+
+    button[type="button"] {
+        width: auto;
+        margin-top: 10px;
+    }
+}
