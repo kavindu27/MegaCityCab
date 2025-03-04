@@ -39,7 +39,8 @@
             <div class="section">
                 <h3>Your Past Bookings</h3>
                 <p>View your previous ride bookings.</p>
-                <a href="viewbookings.jsp" class="button">Go to Your Bookings</a>
+			    <a href="ViewMyBookings.jsp" class="button">Go to Your Bookings</a>
+
             </div>
 
             <!-- Logout Button -->

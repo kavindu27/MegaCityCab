@@ -91,62 +91,29 @@ public class BookingDAO {
         }
     }
 
-    // Method to get all bookings
     public List<Booking> getAllBookings() {
         List<Booking> bookings = new ArrayList<>();
         String query = "SELECT b.booking_id, b.pickup_location, b.destination, b.fare, b.status, u.username "
-                     + "FROM bookings b "
-                     + "JOIN users u ON b.user_id = u.user_id";
+                      + "FROM bookings b "
+                      + "JOIN users u ON b.user_id = u.user_id";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
-                // Use the correct constructor that includes customerName
                 Booking booking = new Booking(
                     rs.getInt("booking_id"),
-                    rs.getString("username"),  // Customer name comes from the users table (username)
+                    rs.getString("username"),
                     rs.getString("pickup_location"),
                     rs.getString("destination"),
                     rs.getDouble("fare"),
                     rs.getString("status"),
-                    rs.getTimestamp("booking_time")
+                    null // You can set this to null if `booking_time` is not present
                 );
                 bookings.add(booking);
             }
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return bookings;
-    }
-
-    // Method to get bookings by user ID
-    public List<Booking> getBookingsByUserId(int userId) {
-        List<Booking> bookings = new ArrayList<>();
-        String query = "SELECT * FROM bookings WHERE user_id = ?"; // Fetch bookings for the given user ID
-
-        try (Connection conn = DBConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
-             
-            stmt.setInt(1, userId);  // Set the user ID in the query
-            ResultSet rs = stmt.executeQuery();
-
-            while (rs.next()) {
-                // Use the correct constructor for creating Booking object
-                Booking booking = new Booking(
-                    rs.getInt("booking_id"),
-                    rs.getString("customer_name"),  // Assuming customer_name exists in bookings table
-                    rs.getString("pickup_location"),
-                    rs.getString("destination"),
-                    rs.getDouble("fare"),
-                    rs.getString("status"),
-                    rs.getTimestamp("booking_time")  // Assuming booking_time is in the database
-                );
-                bookings.add(booking);
-            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -154,5 +121,38 @@ public class BookingDAO {
         return bookings;
     }
     
+ // Method to get bookings by user ID
+    public List<Booking> getBookingsByUserId(int userId) {
+        List<Booking> bookings = new ArrayList<>();
+        String query = "SELECT b.booking_id, b.pickup_location, b.destination, b.fare, b.status, u.username "
+                     + "FROM bookings b "
+                     + "JOIN users u ON b.user_id = u.user_id "
+                     + "WHERE b.user_id = ?"; // Fetch bookings for the given user ID
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setInt(1, userId);  // Set the user ID in the query
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                // Create a Booking object and populate it with data from the ResultSet
+                Booking booking = new Booking(
+                    rs.getInt("booking_id"),
+                    rs.getString("username"),  // Get the customer's name (username)
+                    rs.getString("pickup_location"),
+                    rs.getString("destination"),
+                    rs.getDouble("fare"),
+                    rs.getString("status"),
+                    null// Assuming booking_time is a valid column in the database
+                );
+                bookings.add(booking);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return bookings;
+    }
 
 }
