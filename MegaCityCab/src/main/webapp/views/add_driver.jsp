@@ -6,27 +6,27 @@
 </head>
 <body>
     <h2>Add New Driver</h2>
-    <form action="/MegaCityCab/AddDriverServlet" method="post">
-        <div>
-            <label for="driverName">Driver Name:</label>
-            <input type="text" id="driverName" name="driverName" required />
-        </div>
-        <div>
-            <label for="licenseNumber">License Number:</label>
-            <input type="text" id="licenseNumber" name="licenseNumber" required />
-        </div>
-        <div>
-            <label for="phone">Phone Number:</label>
-            <input type="text" id="phone" name="phone" required />
-        </div>
-        <div>
-            <button type="submit">Add Driver</button>
-        </div>
-        
-         <div>
-        <button type="button" onclick="window.location.href='managerdashboard.jsp'">Back</button>
-        </div>
-    </form>
+	 <form action="/MegaCityCab/AddDriverServlet" method="POST">
+	    <label for="driver_name">Driver Name:</label>
+	    <input type="text" name="driver_name" required>
+	
+	    <label for="license_number">License Number:</label>
+	    <input type="text" name="license_number" required>
+	
+	    <label for="phone">Phone:</label>
+	    <input type="text" name="phone" required>
+	
+	    <label for="status">Status:</label>
+	    <select name="status">
+	        <option value="Available">Available</option>
+	        <option value="Assigned">Assigned</option>
+	        <option value="Inactive">Inactive</option>
+	    </select>
+	
+	    <button type="submit">Add Driver</button>
+	    
+	    <button type="button" onclick="window.location.href='managerdashboard.jsp'">Back</button>
+	</form>
 
     <% if(request.getParameter("error") != null) { %>
         <p style="color: red;"><%= request.getParameter("error") %></p>

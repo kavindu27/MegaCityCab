@@ -69,7 +69,77 @@
     <servlet-name>AddDriverServlet</servlet-name>
     <url-pattern>/AddDriverServlet</url-pattern>
   </servlet-mapping>
+  
+  
+  <!-- AddUserServlet Mapping -->
+  <servlet>
+    <servlet-name>AddUserServlet</servlet-name>
+    <servlet-class>controller.AddUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddUserServlet</servlet-name>
+    <url-pattern>/AddUserServlet</url-pattern>
+  </servlet-mapping>
 
+  <!-- UpdateUserServlet Mapping -->
+  <servlet>
+    <servlet-name>UpdateUserServlet</servlet-name>
+    <servlet-class>controller.UpdateUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateUserServlet</servlet-name>
+    <url-pattern>/UpdateUserServlet</url-pattern>
+  </servlet-mapping>
+
+  <!-- DeleteUserServlet Mapping -->
+  <servlet>
+    <servlet-name>DeleteUserServlet</servlet-name>
+    <servlet-class>controller.DeleteUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteUserServlet</servlet-name>
+    <url-pattern>/DeleteUserServlet</url-pattern>
+  </servlet-mapping>
+
+  <!-- UpdateDriverServlet Mapping -->
+  <servlet>
+    <servlet-name>UpdateDriverServlet</servlet-name>
+    <servlet-class>controller.UpdateDriverServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateDriverServlet</servlet-name>
+    <url-pattern>/UpdateDriverServlet</url-pattern>
+  </servlet-mapping>
+
+  <!-- DeleteDriverServlet Mapping -->
+  <servlet>
+    <servlet-name>DeleteDriverServlet</servlet-name>
+    <servlet-class>controller.DeleteDriverServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteDriverServlet</servlet-name>
+    <url-pattern>/DeleteDriverServlet</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+    <servlet-name>UpdateDriverServlet</servlet-name>
+    <servlet-class>controller.UpdateDriverServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>UpdateDriverServlet</servlet-name>
+    <url-pattern>/UpdateDriverServlet</url-pattern>
+</servlet-mapping>
+
+
+  <!-- DeleteCarServlet Mapping -->
+  <servlet>
+    <servlet-name>DeleteCarServlet</servlet-name>
+    <servlet-class>controller.DeleteCarServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteCarServlet</servlet-name>
+    <url-pattern>/DeleteCarServlet</url-pattern>
+  </servlet-mapping>
 
 
  <session-config>

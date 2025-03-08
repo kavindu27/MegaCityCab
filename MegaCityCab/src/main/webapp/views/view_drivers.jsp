@@ -6,10 +6,7 @@
    <link rel="stylesheet" href="../css/view_drivers.css">
 </head>
 <body>
-    <!-- Back Button Container -->
-    <div class="back-button-container">
-        <button type="button" onclick="window.location.href='managerdashboard.jsp'">Back</button>
-    </div>
+
 
     <h2>Driver List</h2>
 
