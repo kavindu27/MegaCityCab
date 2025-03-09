@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+/* General Styles */
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #20515d, #2f7585);
+    padding: 50px 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.btn {
+    background: #ffd700;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ffcc00;
+}
+
+#system-instructions {
+    background-color: #1e2125;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #000000;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.step {
+    background: #1c2a35;
+    padding: 20px;
+    margin: 15px 0;
+    border-left: 5px solid #20515d;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;    
+}
+
+
+.step:hover {
+    transform: scale(1.02);
+}
+
+h3 {
+    color: #20515d;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    font-size: 16px;
+    color: #aaaaaa;
+    margin: 5px 0;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #System Instructions Section .container {
+        padding: 20px;
+    }
+    
+    #System Instructions Section p {
+        font-size: 14px;
+    }
+}
+
+/* Services Section */
+#services {
+    padding: 50px 0;
+    background: #1e1e1e;
+}
+
+.service-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 10px;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+/* Why Choose Us Section */
+#why-choose-us {
+    padding: 50px 0;
+    background: #20515d;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    background: #101010;
+    padding: 20px;
+    text-align: center;
+    color: #aaa;
+}

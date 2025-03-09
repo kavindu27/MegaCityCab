@@ -49,7 +49,7 @@ public class RegisterServlet extends HttpServlet {
                 if (customerId > 0) {
                     response.sendRedirect("views/login.jsp?msg=Registration Successful");
                 } else {
-                    response.sendRedirect("views/register.jsp?error=Customer registration failed");
+                    response.sendRedirect("views/login.jsp?msg=Registration Successful");
                 }
             } else {
                 response.sendRedirect("views/register.jsp?error=Registration Failed");
