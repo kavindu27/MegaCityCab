@@ -31,7 +31,7 @@
         <select name="role">
             <option value="user">User</option>
             <option value="admin">Admin</option>
-            <option value="Manager">Manager</option>
+            <option value="manager">Manager</option>
         </select>
         
         <button type="submit">Add User</button>

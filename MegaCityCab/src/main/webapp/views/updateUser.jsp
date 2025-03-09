@@ -38,6 +38,7 @@
         <select name="role">
             <option value="user" <% if (resultSet.getString("role").equals("user")) { %>selected<% } %>>User</option>
             <option value="admin" <% if (resultSet.getString("role").equals("admin")) { %>selected<% } %>>Admin</option>
+            <option value="manager" <% if (resultSet.getString("role").equals("manager")) { %>selected<% } %>>manager</option>
         </select>
         
         <button type="submit">Update User</button>
