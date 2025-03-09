@@ -5,6 +5,9 @@
 <html>
 <head>
     <title>Update Driver</title>
+    <link rel="stylesheet" href="../css/UpdateDriver.css">
+    
+    
 </head>
 <body>
     <h2>Update Driver</h2>

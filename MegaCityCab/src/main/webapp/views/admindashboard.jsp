@@ -23,14 +23,8 @@
 
             <div class="section">
                 <h3>View Bookings</h3>
-                <p>Here you can view and manage bookings.</p>
+                <p>Here you can view bookings.</p>
                 <a href="viewbookings.jsp" class="button">Go to Bookings</a>
-            </div>
-            
-            <div class="section">
-                <h3>View Bills</h3>
-                <p>Here you can view and manage bookings.</p>
-                <a href="viewBilljsp" class="button">Go to Bookings</a>
             </div>
 
             <!-- Manage Cars Section -->
@@ -50,11 +44,10 @@
                 <a href="view_drivers.jsp" class="button">View Drivers</a>
             </div>
             
-
-            <div class="logout">
+        </section>
+        <div class="logout">
                 <a href="/MegaCityCab/LogoutServlet" class="button logout-btn">Logout</a>
             </div>
-        </section>
     </div>
 </body>
 </html>

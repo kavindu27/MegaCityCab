@@ -5,6 +5,8 @@
 <html>
 <head>
     <title>Delete User Confirmation</title>
+    <link rel="stylesheet" href="../css/DeleteUser.css">
+    
 </head>
 <body>
     <h2>Are you sure you want to delete this user?</h2>

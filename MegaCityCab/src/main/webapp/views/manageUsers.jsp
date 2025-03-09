@@ -5,6 +5,9 @@
 <html>
 <head>
     <title>Admin Dashboard - Manage Users</title>
+    <link rel="stylesheet" href="../css/ManageUsers.css">
+    
+
 </head>
 <body>
     <h2>Manage Users</h2>

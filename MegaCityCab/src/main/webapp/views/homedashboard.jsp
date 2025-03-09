@@ -42,12 +42,12 @@
 			    <a href="ViewMyBookings.jsp" class="button">Go to Your Bookings</a>
 
             </div>
-
+        </section>
+        
             <!-- Logout Button -->
             <div class="logout">
                 <a href="/MegaCityCab/LogoutServlet" class="button logout-btn">Logout</a>
             </div>
-        </section>
     </div>
 </body>
 </html>

@@ -140,6 +140,30 @@
     <servlet-name>DeleteCarServlet</servlet-name>
     <url-pattern>/DeleteCarServlet</url-pattern>
   </servlet-mapping>
+  
+<servlet>
+    <servlet-name>UpdateBookingServlet</servlet-name>
+    <servlet-class>controller.UpdateBookingServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>UpdateBookingServlet</servlet-name>
+    <url-pattern>/UpdateBookingServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>ViewBillServlet</servlet-name>
+    <servlet-class>controller.ViewBillServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>ViewBillServlet</servlet-name>
+    <url-pattern>/ViewBillServlet</url-pattern>
+</servlet-mapping>
+
+
+
+  
 
 
  <session-config>

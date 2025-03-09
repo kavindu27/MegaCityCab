@@ -11,12 +11,6 @@
 <body>
 
     <h2>Customer Bookings</h2>
-    
-    <!-- Back Button Container (Positioned in the upper-right corner) -->
-    <div class="back-button-container">
-        <button type="button" onclick="window.location.href='managerdashboard.jsp'">Back</button>
-    </div>
-
     <%
         // Retrieve all bookings
         BookingDAO bookingDAO = new BookingDAO();
@@ -38,7 +32,6 @@
                 <th>Destination</th>
                 <th>Fare</th>
                 <th>Status</th>
-                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -51,12 +44,7 @@
                 <td><%= b.getFare() %></td>
                 <td><%= b.getStatus() %></td>
                 <td>
-                    <% if ("Pending".equals(b.getStatus())) { %>
-                        <a href="UpdateBookingServlet?bookingId=<%= b.getBookingId() %>&status=Completed">Mark as Completed</a> |
-                        <a href="CancelBookingServlet?bookingId=<%= b.getBookingId() %>">Cancel</a>
-                    <% } else { %>
-                        No Actions
-                    <% } %>
+                    
                 </td>
             </tr>
             <% } %>

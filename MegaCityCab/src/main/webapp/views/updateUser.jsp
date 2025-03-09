@@ -5,6 +5,8 @@
 <html>
 <head>
     <title>Update User</title>
+    <link rel="stylesheet" href="../css/UpdateUser.css">
+    
 </head>
 <body>
     <h2>Update User</h2>

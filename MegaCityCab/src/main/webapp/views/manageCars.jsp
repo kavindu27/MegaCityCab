@@ -5,6 +5,7 @@
 <html>
 <head>
     <title>Manage Cars</title>
+    <link rel="stylesheet" href="../css/ManageCars.css">
 </head>
 <body>
     <h2>Manage Cars</h2>

@@ -34,11 +34,11 @@
                 <a href="view_drivers.jsp" class="button">View Drivers</a>
             </div>
 
-            <!-- Logout Button -->
+        </section>
+                    <!-- Logout Button -->
             <div class="logout">
                 <a href="/MegaCityCab/LogoutServlet" class="button logout-btn">Logout</a>
             </div>
-        </section>
     </div>
 </body>
 </html>

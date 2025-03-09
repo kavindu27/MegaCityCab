@@ -5,6 +5,8 @@
 <html>
 <head>
     <title>Manage Drivers</title>
+    <link rel="stylesheet" href="../css/ManageDrivers.css">
+    
 </head>
 <body>
     <h2>Manage Drivers</h2>

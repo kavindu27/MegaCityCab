@@ -5,6 +5,8 @@
 <html>
 <head>
     <title>Delete Driver</title>
+    <link rel="stylesheet" href="../css/DeleteDriver.css">
+    
 </head>
 <body>
     <h2>Delete Driver</h2>
