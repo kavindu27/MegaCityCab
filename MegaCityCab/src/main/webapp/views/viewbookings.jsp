@@ -43,9 +43,6 @@
                 <td><%= b.getDestination() %></td>
                 <td><%= b.getFare() %></td>
                 <td><%= b.getStatus() %></td>
-                <td>
-                    
-                </td>
             </tr>
             <% } %>
         </tbody>

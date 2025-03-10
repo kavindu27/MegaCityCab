@@ -42,7 +42,6 @@ public class DBConnection {
         }
         return conn;
     }
-
     /**
      * Method to close the database connection (if needed).
      * It is important to close the connection to free up resources.

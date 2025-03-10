@@ -52,7 +52,6 @@
                             <th>Destination</th>
                             <th>Fare</th>
                             <th>Status</th>
-                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,14 +66,8 @@
                             <td><%= b.getDestination() %></td>
                             <td><%= b.getFare() %></td>
                             <td><%= b.getStatus() %></td>
-                            <td>
-                                <% if ("Pending".equals(b.getStatus())) { %>
-                                    <a href="UpdateBookingServlet?bookingId=<%= b.getBookingId() %>&status=Completed">Mark as Completed</a> |
-                                    <a href="CancelBookingServlet?bookingId=<%= b.getBookingId() %>">Cancel</a>
-                                <% } else { %>
-                                    No Actions
-                                <% } %>
-                            </td>
+           
+
                         </tr>
                         <% 
                             } 
